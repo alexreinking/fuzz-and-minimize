@@ -15,6 +15,12 @@ Use like so:
     ./random_input.py ./example/bad_encoder.sh ./example/bad_decoder.sh 'ABC' > bad_input
     ./bisect_input.py ./example/bad_encoder.sh ./example/bad_decoder.sh bad_input > bad_input_min
 
+This is all wrapped up into a bash script:
+
+    ./find_and_minimize.sh ./example/bad_encoder.sh ./example/bad_decoder.sh 'ABC'
+    cat bad_input ; echo
+    cat bad_input_min ; echo
+
 YMMV
 
 Licensed under GPL v3.
