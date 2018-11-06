@@ -10,11 +10,11 @@ def make_tester(encode, decode, text):
     def tester(n):
         my_text = text[:n].encode()
 
-        enc = subprocess.run([encode], stdout=subprocess.PIPE, input=my_text)
+        enc = subprocess.run(encode, shell=True, stdout=subprocess.PIPE, input=my_text)
         if enc.returncode != 0:
             return False
 
-        dec = subprocess.run([decode], stdout=subprocess.PIPE, input=enc.stdout)
+        dec = subprocess.run(decode, shell=True, stdout=subprocess.PIPE, input=enc.stdout)
         return my_text == dec.stdout
 
     return tester
